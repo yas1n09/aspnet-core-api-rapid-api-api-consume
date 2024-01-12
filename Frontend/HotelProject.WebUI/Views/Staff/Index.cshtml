@@ -9,7 +9,7 @@
         <th>#</th>
         <th>Personel Adı</th>
         <th>Personel Ünvan</th>
-        <th>Güncelle - Sil</th>       
+        <th>Güncelle  -  Sil</th>       
         <th>Detaylar</th>
     </tr>
     @foreach(var item in Model)
@@ -18,8 +18,12 @@
             <th>@item.StaffID</th>
             <td>@item.Name</td>
             <td>@item.Title</td>
-            <td><a href="#" class="fa fa-pencil color-muted m-r-5"></a>   <a href="#" class="fa fa-close color-danger"></a></td>
-            <td><a href="#" class="btn mb-1 btn-outline-dark">Detaylar</a></td>
+            <td>
+                <a href="/Staff/UpdateStaff/@item.StaffID" class="fa fa-pencil color-muted m-r-5" style="margin-left:10px;"></a>
+                <a href="/Staff/DeleteStaff/@item.StaffID" class="fa fa-close color-danger" style="margin-left:50px"></a>
+        </td>
+            <td>
+                <a href="#" class="btn mb-1 btn-outline-dark">Detaylar</a></td>
         </tr>
     }
 </table>
