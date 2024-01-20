@@ -23,15 +23,15 @@
                 <tr>
                     <th>@count</th>
                     <td>@item.Name</td>
-                    <td>@item.Checkin</td>
-                    <td>@item.CheckOut</td>
+                    <td>@(((DateTime)item.Checkin).ToString("dd-MMM-yyyy"))</td>
+                    <td>@(((DateTime)item.CheckOut).ToString("dd-MMM-yyyy"))</td>
                     <td><span class="badge badge-primary px-2">@item.Status</span></td>
                     <td>
-                        <a href="#" class="btn btn-outline-success">Onayla</a>
-                        <a href="#" class="btn btn-outline-danger">İptal Et</a>
-                        <a href="#" class="btn btn-outline-warning">Beklet</a>
-                        <a href="#" class="btn btn-outline-info">Güncelle</a>
-                        <a href="#" class="btn btn-outline-dark">Detaylar</a>
+                        <a href="/BookingAdmin/ApprovedReservation2/@item.BookingID" class="btn btn-outline-success">Onayla</a>
+                        <a href="/BookingAdmin/CancelReservation/@item.BookingID" class="btn btn-outline-danger">İptal Et</a>
+                        <a href="/BookingAdmin/WaitReservation/@item.BookingID" class="btn btn-outline-warning">Beklet</a>
+                        <a href="/BookingAdmin/UpdateBooking/@item.BookingID" class="btn btn-outline-info">Güncelle</a>
+                        <a href="/BookingAdmin/UpdateBooking/@item.BookingID" class="btn btn-outline-dark">Detaylar</a>
                     </td>
                 </tr>
             }
