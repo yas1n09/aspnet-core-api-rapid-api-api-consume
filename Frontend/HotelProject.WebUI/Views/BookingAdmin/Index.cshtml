@@ -1,58 +1,42 @@
-﻿
+﻿@model List<ResultBookingDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
 }
 
-<div class="col-lg-6">
-    <div class="card">
-        <div class="card-body">
-            <div class="card-title">
-                <h4>Rezervasyonlar</h4>
-            </div>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Status</th>
-                            <th>Date</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>1</th>
-                            <td>Kolor Tea Shirt For Man</td>
-                            <td>
-                                <span class="badge badge-primary px-2">Sale</span>
-                            </td>
-                            <td>January 22</td>
-                            <td class="color-primary">$21.56</td>
-                        </tr>
-                        <tr>
-                            <th>2</th>
-                            <td>Kolor Tea Shirt For Women</td>
-                            <td>
-                                <span class="badge badge-danger px-2">Tax</span>
-                            </td>
-                            <td>January 30</td>
-                            <td class="color-success">$55.32</td>
-                        </tr>
-                        <tr>
-                            <th>3</th>
-                            <td>Blue Backpack For Baby</td>
-                            <td>
-                                <span class="badge badge-success px-2">Extended</span>
-                            </td>
-                            <td>January 25</td>
-                            <td class="color-danger">$14.85</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Misafir</th>
+                <th>Giriş Tarihi</th>
+                <th>Çıkış Tarihi</th>
+                <th>Durum</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <th>@count</th>
+                    <td>@item.Name</td>
+                    <td>@item.Checkin</td>
+                    <td>@item.CheckOut</td>
+                    <td><span class="badge badge-primary px-2">@item.Status</span></td>
+                    <td>
+                        <a href="#" class="btn btn-outline-success">Onayla</a>
+                        <a href="#" class="btn btn-outline-danger">İptal Et</a>
+                        <a href="#" class="btn btn-outline-warning">Beklet</a>
+                        <a href="#" class="btn btn-outline-info">Güncelle</a>
+                        <a href="#" class="btn btn-outline-dark">Detaylar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
+
 
