@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace RapidApiConsume.Controllers
 {
-    public class SearchLocationID : Controller
+    public class SearchLocationIDController : Controller
     {
         public async Task<IActionResult> Index(string cityName)
         {
