@@ -32,6 +32,7 @@ namespace HotelProject.WebUI.Controllers
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             await client.PostAsync("http://localhost:49452/api/Subscribe", stringContent);
             return RedirectToAction("Index", "Default");
+
         }
     }
 }
