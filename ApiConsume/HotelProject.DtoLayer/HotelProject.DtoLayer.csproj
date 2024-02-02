@@ -23,10 +23,4 @@
     <ProjectReference Include="..\HotelProject.EntityLayer\HotelProject.EntityLayer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Dtos\ServiceDto\" />
-    <Folder Include="Dtos\SubscribeDto\" />
-    <Folder Include="Dtos\StaffDto\" />
-  </ItemGroup>
-
 </Project>

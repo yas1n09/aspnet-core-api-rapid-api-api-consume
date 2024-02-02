@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HotelProject.BusinessLayer.Concrete
 {
-    public class BookingManager :IBookingService
+    public class BookingManager : IBookingService
     {
         private readonly IBookingDal _bookingDal;
 

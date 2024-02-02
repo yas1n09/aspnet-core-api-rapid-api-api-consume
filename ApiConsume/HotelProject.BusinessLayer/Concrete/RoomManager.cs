@@ -41,7 +41,7 @@ namespace HotelProject.BusinessLayer.Concrete
         public void TUpdate(Room t)
         {
             _roomDal.Update(t);
-           
+
         }
     }
 }
