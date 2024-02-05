@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-mail col-mail-2">
                         <div class="subject"><b>Konu: @item.Title </b> Alıcı: @item.ReceiverName</div>
-                        <div class="date">@item.Date</div>
+                        <div class="date">@(((DateTime)item.Date).ToString("dd-MM-yyyy"))</div>
                     </div>
                 </a>
             </div>
