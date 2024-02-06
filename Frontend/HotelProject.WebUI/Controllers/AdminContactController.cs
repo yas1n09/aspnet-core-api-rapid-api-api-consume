@@ -73,5 +73,17 @@ namespace HotelProject.WebUI.Controllers
         {
             return PartialView();
         }
+        public async Task<IActionResult> MessageDetails(int id) 
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"http://localhost:49452/api/SendMessage/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<GetMessageByIdDto>(jsonData);
+                return View(values);
+            }
+            return View();
+        }
     }
 }

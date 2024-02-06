@@ -30,16 +30,12 @@ namespace HotelProject.WebApi.Controllers
             var values = _contactService.TGetLİst();
             return Ok(values);
         }
-        [HttpGet("{id}")]
-        public IActionResult GetSendMessage(int id)
-        {
-            var values = _contactService.TGetByID(id);
-            return Ok(values);
-        }
-        //[HttpGet("GetContactCount")]
-        //public IActionResult GetContactCount()
+        //[HttpGet("{id}")]
+        //public IActionResult GetSendMessage(int id)
         //{
-        //    return Ok(_contactService.TGetContactCount());
+        //    var values = _contactService.TGetByID(id);
+        //    return Ok(values);
         //}
+
     }
 }
